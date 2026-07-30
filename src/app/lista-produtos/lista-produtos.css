@@ -98,6 +98,22 @@ button:active {
     background-color: var(--botao-limpar-hover);
 }
 
+
+
+
+/* Botão de alerta/perigo (Laranja ou Vermelho Escuro) */
+#btnLimparTudo, #bnt-limpar-tudo {
+    background-color: var(--botao-limpar-tudo, #e63946); /* Usa a variável ou o fallback vermelho */
+    width: 100%; /* Caso queira que ele ocupe a largura total abaixo dos outros botões */
+    margin-top: 15px;
+}
+
+#btnLimparTudo:hover, #bnt-limpar-tudo:hover {
+    background-color: var(--botao-limpar-tudo-hover, #c1121f);
+    box-shadow: 0 2px 8px rgba(230, 57, 70, 0.3);
+}
+
+
 /* ===================================
    LISTA DE ITENS
    =================================== */
