@@ -1,4 +1,4 @@
-@import url();
+
 
 *{
     margin: 0px;
@@ -9,11 +9,11 @@
 
 }
 :root {
-    --div-fundo: #F8F9FA;
-    --branca: #ffffff;
-    --botao1: #198754;
-    --botao2: #DC3545;
-    --cor1: #D1E7DD;
+    --div-fundo: #6b6969;
+    --branca: #6912ff;
+    --botao1: #00ed53;
+    --botao2: #ff4907;
+    --cor1: #d8e1dd;
     --cor2: #0D6EFD;
 }
 

@@ -44,7 +44,7 @@ button{
     width: 150px;
     height: 30px;
     margin-left: 40px;
-    color: var(--branca);
+    color: var(--botao1);
     border: none;
     cursor: pointer;
 }
