@@ -139,3 +139,9 @@ button:active {
     font-weight: 500;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
+
+/* Riscado e cor opaca/cinza ao marcar */
+.item-riscado {
+    text-decoration: line-through;
+    color: #888;
+  }

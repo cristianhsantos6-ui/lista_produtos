@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {Item} from './item';
+import { CommonModule } from '@angular/common';
+import { Item } from './item';
 
 @Component({
   selector: 'app-lista-produtos',
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './lista-produtos.html',
   styleUrl: './lista-produtos.css',
 })
-
 export class ListaProdutos {
   id_produto: number = 0;
   descricao_produto: string = '';
@@ -17,24 +17,24 @@ export class ListaProdutos {
   listaItens: Item[] = [];
 
   addItem() {
-    console.log(this.descricao_produto, '<->', this.valor_unitario)
-  //INSTANCIANDO A CLASSE ITEM
-  let item = new Item()
-  item.idProduto = this.listaItens.length + 1
-  item.descricaoProduto = this.descricao_produto
-  item.valorUnitario = this.valor_unitario
+    console.log(this.descricao_produto, '<->', this.valor_unitario);
+    
+    let item = new Item();
+    item.idProduto = this.listaItens.length + 1;
+    item.descricaoProduto = this.descricao_produto;
+    item.valorUnitario = this.valor_unitario;
+    item.statusSelecionado = false; // Usa a propriedade com o nome correto!
 
+    this.listaItens.push(item);
 
-  this.listaItens.push(item)
+    this.descricao_produto = '';
+    this.valor_unitario = 0.0;
+  }
 
-  this.descricao_produto = ''
-  this.valor_unitario = 0.0
+  limparTudo() {
+    // Altera a propriedade statusSelecionado em todos os itens
+    this.listaItens.forEach(item => {
+      item.statusSelecionado = true;
+    });
+  }
 }
-
-limparTudo() {
-  this.listaItens = []
-  this.descricao_produto = '';
-  this.valor_unitario = 0.0;
-}
-}
-

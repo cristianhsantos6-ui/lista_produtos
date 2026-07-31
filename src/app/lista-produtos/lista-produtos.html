@@ -1,36 +1,27 @@
 <div id="div-form">
-    <h3> LISTA PRODUTOS</h3>
+    <h3>LISTA PRODUTOS</h3>
 
     <form id="formulario">
         <label for="descricao">Descrição Produto</label>
         <input type="text" name="descricao" id="descricao" [(ngModel)]="descricao_produto">
-        
 
         <label for="valor">Valor</label>
-        <input type="number" name="valor" id="valor" [(ngModel)] = "valor_unitario">
-     <div id="btns">
-        <button type="button" id="bntAdd" (click)="addItem()" >Adicionar</button>
-       <button type="button" id="btn-limpar" (click)="limparTudo()">Limpar Tudo</button>
-     </div>
+        <input type="number" name="valor" id="valor" [(ngModel)]="valor_unitario">
+        
+        <div id="btns">
+            <button type="button" id="bntAdd" (click)="addItem()">Adicionar</button>
+            <button type="button" id="btn-limpar" (click)="limparTudo()">Limpar Tudo</button>
+        </div>
     </form>
 
-   <div id="div-lista">
-
-    @for(elem of listaItens; track elem.idProduto){
-    <div class="div-item">
-        <input type="checkbox" [checked]="elem.statusSelecionado"> &nbsp; &nbsp;
-
-        {{elem.idProduto}} - 
-        {{elem.descricaoProduto}} R$ {{elem.
-        valorUnitario}}
+    <div id="div-lista">
+        @for(elem of listaItens; track elem.idProduto){
+            <div class="div-item" [class.item-riscado]="elem.statusSelecionado">
+                <input type="checkbox" [(ngModel)]="elem.statusSelecionado">
+                <span>{{elem.idProduto}} - {{elem.descricaoProduto}} - R$ {{elem.valorUnitario}}</span>
+            </div>
+        }@empty{
+            <div class="div-item">Nenhum Produto na lista</div>
+        }
     </div>
-}@empty{
-
-    
-    <div class="div-item"> Nehum Produto na lista</div>
-
-    }
-
-
-</div>
 </div>
