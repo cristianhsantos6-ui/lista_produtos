@@ -17,7 +17,8 @@
     <div id="div-lista">
         @for(elem of listaItens; track elem.idProduto){
             <div class="div-item" [class.item-riscado]="elem.statusSelecionado">
-                <input type="checkbox" [(ngModel)]="elem.statusSelecionado">
+               
+                <input type="checkbox" [(ngModel)]="elem.statusSelecionado"> &nbsp; &nbsp;
                 <span>{{elem.idProduto}} - {{elem.descricaoProduto}} - R$ {{elem.valorUnitario}}</span>
             </div>
         }@empty{

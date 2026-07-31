@@ -30,11 +30,12 @@ export class ListaProdutos {
     this.descricao_produto = '';
     this.valor_unitario = 0.0;
   }
-
   limparTudo() {
-    // Altera a propriedade statusSelecionado em todos os itens
-    this.listaItens.forEach(item => {
-      item.statusSelecionado = true;
-    });
+    // Mantém apenas os itens que NÃO estão selecionados
+    this.listaItens = this.listaItens.filter(item => !item.statusSelecionado);
+  
+    // Opcional: limpa os campos de input do formulário
+    this.descricao_produto = '';
+    this.valor_unitario = 0.0;
   }
 }
